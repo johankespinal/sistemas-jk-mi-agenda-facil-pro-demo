@@ -2,6 +2,12 @@
 
 **Demostración interactiva** de un sistema web para gestionar citas, clientes y servicios de negocios pequeños. Proyecto de portafolio, no un sistema comercial conectado a servidores.
 
+## Vista previa del sistema
+
+![Panel de Agenda Fácil PRO](agenda.jpg)
+
+**[Abrir la demo interactiva](https://johankespinal.github.io/sistemas-jk-mi-agenda-facil-pro-demo/)**
+
 ## ¿Qué se puede probar?
 
 - Dashboard con próximas citas, citas del día, pendientes, completadas y cantidad de clientes.
