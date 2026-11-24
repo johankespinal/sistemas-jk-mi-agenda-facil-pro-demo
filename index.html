@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171d33" />
+  <meta name="description" content="Agenda Fácil PRO: demostración interactiva para gestión de citas, clientes y servicios. Sistemas JK." />
+  <title>Agenda Fácil PRO | Sistemas JK</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a href="#inicio" class="brand" data-nav="inicio" aria-label="Agenda Fácil PRO, inicio">
+      <span class="brand-mark">✦</span><span><strong>Agenda<span class="brand-accent">Fácil</span></strong><small>PRO <span>· SISTEMAS JK</span></small></span>
+    </a>
+    <div class="workspace-label">ESPACIO DE TRABAJO</div>
+    <nav class="nav" aria-label="Menú principal">
+      <button class="nav-item active" data-view="inicio"><span class="nav-icon">▦</span> Resumen</button>
+      <button class="nav-item" data-view="agenda"><span class="nav-icon">▤</span> Agenda y citas <span class="nav-count" id="nav-count">0</span></button>
+      <button class="nav-item" data-view="clientes"><span class="nav-icon">♙</span> Clientes</button>
+      <button class="nav-item" data-view="servicios"><span class="nav-icon">◇</span> Servicios</button>
+      <button class="nav-item" data-view="reportes"><span class="nav-icon">▥</span> Reportes</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="studio-sticker"><span>✳</span><div><b>Tu agenda, en orden.</b><p>Una demostración lista para explorar.</p></div></div><div class="sidebar-foot">Demo interactiva · Datos de prueba<br>Desarrollado por <strong>Sistemas JK</strong></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="topbar-left"><button id="mobile-menu" class="mobile-menu icon-button" aria-label="Abrir menú">☰</button><span class="breadcrumb">ESPACIO DE TRABAJO <span>/</span> <b id="breadcrumb-current">Resumen</b></span></div><div class="topbar-right"><span class="demo-tag"><i></i> MODO DEMOSTRACIÓN</span><span class="today" id="top-date"></span><span class="user-avatar">JK</span></div></header>
+    <div class="content">
+      <section class="view active" id="view-inicio">
+        <div class="page-head"><div><p class="eyebrow">TU CENTRO DE OPERACIONES</p><h1>Un buen día comienza <em>organizado.</em></h1><p class="page-sub">Citas, clientes y servicios. Todo bajo control, sin complicaciones.</p></div><button class="btn btn-primary" data-open="appointment"><span>＋</span> Nueva cita</button></div>
+        <div class="hero-banner"><div class="hero-sparks">✳ ✦ ✳</div><div><div class="hero-small">TU AGENDA DE HOY</div><h2 id="hero-title">¡Vamos a por un gran día!</h2><p id="hero-message">Organiza tu próxima atención con unos pocos clics.</p><button class="hero-link" data-view="agenda">Ver agenda completa <span>↗</span></button></div><div class="hero-illustration" aria-hidden="true"><div class="illustration-card"><div class="illustration-line thick"></div><div class="illustration-line"></div><div class="illustration-dots"><span>✓</span><span>✓</span><span>●</span></div></div><div class="hero-orbit">✦</div></div></div>
+        <div class="stats-grid"><div class="stat-card"><span class="stat-icon purple">▤</span><div><span class="stat-label">Citas de hoy</span><strong id="stat-today">0</strong><small>Programadas para hoy</small></div></div><div class="stat-card"><span class="stat-icon orange">◷</span><div><span class="stat-label">Pendientes</span><strong id="stat-pending">0</strong><small>Por atender</small></div></div><div class="stat-card"><span class="stat-icon green">✓</span><div><span class="stat-label">Completadas</span><strong id="stat-done">0</strong><small>En tu agenda</small></div></div><div class="stat-card"><span class="stat-icon blue">♙</span><div><span class="stat-label">Clientes</span><strong id="stat-clients">0</strong><small>En tu directorio</small></div></div></div>
+        <div class="dashboard-grid"><section class="panel appointments-panel"><div class="panel-head"><div><p class="eyebrow">PRÓXIMOS ENCUENTROS</p><h3>Tu agenda más cercana</h3></div><button class="text-link" data-view="agenda">Ver todas ↗</button></div><div id="upcoming-list" class="upcoming-list"></div></section><section class="panel side-panel"><div class="panel-head"><div><p class="eyebrow">A UN CLIC</p><h3>Acciones rápidas</h3></div></div><div class="quick-actions"><button data-open="appointment"><span class="quick-icon purple">＋</span><span><b>Agendar una cita</b><small>Reserva una nueva atención</small></span><span class="quick-arrow">↗</span></button><button data-open="client"><span class="quick-icon peach">♙</span><span><b>Registrar cliente</b><small>Agrega un contacto</small></span><span class="quick-arrow">↗</span></button><button data-view="reportes"><span class="quick-icon mint">▥</span><span><b>Ver reportes</b><small>Consulta tu actividad</small></span><span class="quick-arrow">↗</span></button></div><div class="tip-box"><span>✦</span><div><b>Una agenda que trabaja contigo.</b><p>Los cambios se guardan en este navegador para que puedas probar todo el sistema.</p></div></div></section></div>
+      </section>
+
+      <section class="view" id="view-agenda"><div class="page-head"><div><p class="eyebrow">GESTIÓN DE RESERVAS</p><h1>Agenda y <em>citas.</em></h1><p class="page-sub">Organiza, busca y actualiza el estado de cada atención.</p></div><button class="btn btn-primary" data-open="appointment">＋ Nueva cita</button></div><section class="panel"><div class="toolbar"><div class="input-search"><span>⌕</span><input id="search-appointments" placeholder="Buscar cliente o servicio…" aria-label="Buscar citas" /></div><select id="filter-status" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="pending">Pendientes</option><option value="done">Completadas</option><option value="cancelled">Canceladas</option></select><input id="filter-date" type="date" aria-label="Filtrar por fecha" /><button class="btn btn-light" id="clear-filters">Limpiar</button></div><div id="appointments-table" class="table-wrap"></div></section></section>
+
+      <section class="view" id="view-clientes"><div class="page-head"><div><p class="eyebrow">RELACIONES QUE IMPORTAN</p><h1>Todos tus <em>clientes.</em></h1><p class="page-sub">Una ficha sencilla para cada persona que confía en tu negocio.</p></div><button class="btn btn-primary" data-open="client">＋ Nuevo cliente</button></div><section class="panel"><div class="toolbar"><div class="input-search"><span>⌕</span><input id="search-clients" placeholder="Buscar nombre, teléfono o correo…" aria-label="Buscar clientes" /></div></div><div id="clients-grid" class="clients-grid"></div></section></section>
+
+      <section class="view" id="view-servicios"><div class="page-head"><div><p class="eyebrow">TU CATÁLOGO</p><h1>Servicios que <em>ofreces.</em></h1><p class="page-sub">Personaliza servicios y precios para organizar tus reservas.</p></div><button class="btn btn-primary" data-open="service">＋ Nuevo servicio</button></div><div class="service-grid" id="services-grid"></div></section>
+
+      <section class="view" id="view-reportes"><div class="page-head"><div><p class="eyebrow">DECISIONES CON DATOS</p><h1>El pulso de tu <em>negocio.</em></h1><p class="page-sub">Un resumen dinámico de las citas registradas en esta demostración.</p></div><button class="btn btn-light" id="export-csv">↓ Exportar CSV</button></div><div class="report-layout"><section class="panel"><div class="panel-head"><div><p class="eyebrow">ACTIVIDAD</p><h3>Estados de las citas</h3></div></div><div id="report-chart" class="report-chart"></div></section><section class="panel"><div class="panel-head"><div><p class="eyebrow">CIFRAS RÁPIDAS</p><h3>Resumen general</h3></div></div><div id="report-metrics" class="report-metrics"></div></section></div><div class="note-banner">ⓘ Esta es una demostración sin servidor: los datos pertenecen únicamente a este navegador. No introduzcas información personal real de clientes.</div></section>
+    </div>
+    <footer class="footer"><span>Agenda Fácil PRO · Un concepto de <b>Sistemas JK</b></span><button id="reset-data" title="Restablecer los datos ficticios de esta demo">Restablecer demo ↺</button></footer>
+  </main>
+</div>
+
+<div id="modal-backdrop" class="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><p class="eyebrow">AGENDA FÁCIL PRO</p><h2 id="modal-title">Nueva cita</h2></div><button id="close-modal" class="close-modal" aria-label="Cerrar">✕</button></div><form id="data-form"><div id="modal-fields" class="form-fields"></div><div class="modal-actions"><button type="button" class="btn btn-light" id="cancel-modal">Cancelar</button><button type="submit" class="btn btn-primary" id="submit-modal">Guardar</button></div></form></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
